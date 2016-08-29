@@ -10,3 +10,9 @@ $('.pendo-next-button').show();
 });
 
 //Example state change 2
+$(elementPathRule).on('input.pendo propertychange.pendo keydown.pendo change.pendo', function() {
+                if ($.trim($(this).val().toLowerCase()) == '<%= template.transitionText %>'.toLowerCase()) {
+                        pendo.onGuideAdvanced();
+                    $(this).off('.pendo');
+                    }
+});
